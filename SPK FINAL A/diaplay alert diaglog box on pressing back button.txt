@@ -1,0 +1,67 @@
+Activity Main.xml=
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="back"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.751"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+Build gradel = 
+
+ id 'kotlin-android-extensions'
+
+# when set icon right click on drawable folder select new , select images asssets
+ select action type = action bar and tab icons and clip art and search warning icon and select triangle select next and finish when this steps is finish ( eBuilder.setTitle("Exit"))
+Main Activity.kt = 
+
+package com.example.alertbox
+
+import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        btn_1.setOnClickListener {
+            val eBuilder = AlertDialog.Builder(this)
+            eBuilder.setTitle("Exit")
+            eBuilder.setIcon(R.drawable.ic_action_name)
+            eBuilder.setMessage("R U Sure U want X")
+            eBuilder.setPositiveButton("SS"){
+                Dialog,which->
+                finish()
+            }
+            eBuilder.setNegativeButton("NN"){
+                Dialog,which->
+                Toast.makeText(this,"You want X press again this button",Toast.LENGTH_SHORT).show()
+            }
+            val createBuild = eBuilder.create()
+            createBuild.show()
+
+        }
+
+    }
+}

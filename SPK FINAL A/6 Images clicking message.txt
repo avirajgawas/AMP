@@ -1,0 +1,134 @@
+Activitymain.xml:-
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/img_1"
+        android:layout_width="141dp"
+        android:layout_height="148dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/img_2"
+        android:layout_width="149dp"
+        android:layout_height="133dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.767"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.065"
+        app:srcCompat="@drawable/home" />
+
+    <ImageView
+        android:id="@+id/img_3"
+        android:layout_width="130dp"
+        android:layout_height="173dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_1"
+        app:layout_constraintVertical_bias="0.157"
+        app:srcCompat="@drawable/home" />
+
+    <ImageView
+        android:id="@+id/img_4"
+        android:layout_width="170dp"
+        android:layout_height="167dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_3"
+        app:layout_constraintTop_toBottomOf="@+id/img_2"
+        app:layout_constraintVertical_bias="0.154"
+        app:srcCompat="@drawable/home" />
+
+    <ImageView
+        android:id="@+id/img_5"
+        android:layout_width="158dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_4"
+        app:layout_constraintVertical_bias="0.284"
+        app:srcCompat="@drawable/home" />
+
+    <ImageView
+        android:id="@+id/img_6"
+        android:layout_width="159dp"
+        android:layout_height="148dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintStart_toEndOf="@+id/img_5"
+        app:layout_constraintTop_toBottomOf="@+id/img_4"
+        app:layout_constraintVertical_bias="0.361"
+        app:srcCompat="@drawable/home" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+build.gradle
+
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions'
+}
+
+android {
+    namespace 'com.example.calculatorapp'
+    compileSdk 33
+
+
+MainActivity.kt:-
+
+package com.example.imageclick
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
+
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        img_1.setOnClickListener {
+            Toast.makeText(applicationContext, "this is home", Toast.LENGTH_LONG).show()
+        }
+        img_2.setOnClickListener {
+            Toast.makeText(applicationContext, "this is home 2", Toast.LENGTH_LONG).show()
+        }
+
+        img_3.setOnClickListener {
+            Toast.makeText(applicationContext, "this is home 3", Toast.LENGTH_LONG).show()
+        }
+        img_4.setOnClickListener {
+            Toast.makeText(applicationContext, "this is home 4", Toast.LENGTH_LONG).show()
+        }
+        img_5.setOnClickListener {
+            Toast.makeText(applicationContext, "this is home 5", Toast.LENGTH_LONG).show()
+        }
+        img_6.setOnClickListener {
+            Toast.makeText(applicationContext, "this is home 6", Toast.LENGTH_LONG).show()
+        }
+    }
+}
